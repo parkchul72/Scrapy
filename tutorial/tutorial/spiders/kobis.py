@@ -6,8 +6,9 @@ class KobisSpider(scrapy.Spider):
     name = "kobis"
     allowed_domains = ["kobis.org"]
     start_urls = [
-        "http://www.kobis.or.kr/kobis/business/mast/mvie/searchMovieList.do&curPage="
+        "http://www.kobis.or.kr/kobis/business/mast/mvie/searchMovieList.do"
     ]
+    # Paging처리 요망 http://www.kobis.or.kr/kobis/business/mast/mvie/searchMovieList.do&curPage=
 
     def parse(self, response):
         for sel in response.xpath('//table[@class="boardList03"]/tbody/tr'):
